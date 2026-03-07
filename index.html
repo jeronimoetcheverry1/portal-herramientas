@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi Portal de Herramientas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Herramientas Online</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mi Portal de Herramientas</h1>
-  </header>
+    <!-- Header -->
+    <header>
+        <h1>Portal de Herramientas Online</h1>
+        <input type="text" id="searchBar" placeholder="Buscar herramienta..." onkeyup="filterTools()">
+    </header>
 
-  <section id="contador-palabras">
-    <h2>Contador de Palabras</h2>
-    <textarea id="texto" rows="5" cols="50" placeholder="Escribe tu texto aquí..."></textarea>
-    <p>Palabras: <span id="contador">0</span></p>
-    <button onclick="contarPalabras()">Contar</button>
-  </section>
+    <!-- Featured Tools -->
+    <section id="featured">
+        <h2>Herramientas Destacadas</h2>
+        <div class="tools-container">
+            <div class="tool-card" data-category="Productividad">Contador de palabras</div>
+            <div class="tool-card" data-category="Finanzas">Conversor de divisas</div>
+            <div class="tool-card" data-category="Finanzas">Calculadora de propinas</div>
+            <div class="tool-card" data-category="Seguridad">Generador de contraseñas</div>
+            <div class="tool-card" data-category="Salud">Calculadora de IMC</div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Categorías -->
+    <section id="categories">
+        <h2>Finanzas</h2>
+        <div class="tools-container">
+            <div class="tool-card" onclick="openTool('divisas')">Conversor de divisas</div>
+            <div class="tool-card" onclick="openTool('propina')">Calculadora de propinas</div>
+        </div>
+
+        <h2>Productividad</h2>
+        <div class="tools-container">
+            <div class="tool-card" onclick="openTool('contador')">Contador de palabras</div>
+        </div>
+
+        <h2>Seguridad</h2>
+        <div class="tools-container">
+            <div class="tool-card" onclick="openTool('password')">Generador de contraseñas</div>
+        </div>
+
+        <h2>Salud</h2>
+        <div class="tools-container">
+            <div class="tool-card" onclick="openTool('imc')">Calculadora de IMC</div>
+        </div>
+
+        <h2>Diversión</h2>
+        <div class="tools-container">
+            <p>Próximamente...</p>
+        </div>
+    </section>
+
+    <!-- Tool Modals -->
+    <div id="toolModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTool()">&times;</span>
+            <div id="toolContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Creado por Jero | 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
