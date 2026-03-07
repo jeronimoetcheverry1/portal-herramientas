@@ -1,5 +1,122 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
-header { text-align: center; }
-section { margin-bottom: 40px; }
-textarea { width: 100%; }
-button { margin-top: 10px; }
+/* RESET & BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #2f3640;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 2rem;
+    background: #3742fa;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 1rem;
+}
+
+#searchBar {
+    padding: 0.7rem;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* SECCIONES */
+section {
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* TOOLS */
+.tools-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tool-card {
+    background: white;
+    padding: 1.5rem;
+    flex: 1 1 200px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2f3640;
+    color: white;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tools-container {
+        flex-direction: column;
+    }
+
+    #searchBar {
+        width: 95%;
+    }
+}
